@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/lab0_executble.dir/src/main.c.o -o lab0_executble 
