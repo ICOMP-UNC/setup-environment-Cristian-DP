@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/lab0_execute.dir/src/main.c.o -o lab0_execute 

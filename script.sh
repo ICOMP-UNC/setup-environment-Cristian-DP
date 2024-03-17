@@ -1,24 +1,38 @@
 #!/bin/bash
 
+echo "## Aplicamos lang-format -style=Microsoft -i a include y src "
+clang-format -style=Microsoft -i include/*
+clang-format -style=Microsoft -i src/*
+
+echo ""
+
 # Buscar el directorio "build" en el directorio actual
 if [ -d "./build" ]; then
-    echo "Se encontró el directorio 'build' en $(pwd)"
-    echo "Se eliminará su contenido"
+    echo "## Se encontró el directorio 'build' en $(pwd)"
+    echo "## Se eliminará su contenido"
     rm -r ./build/*
 else
-    echo "No se encontró el directorio 'build' en $(pwd)"
-    echo "Se creará el directorio ./build"
+    echo "## No se encontró el directorio 'build' en $(pwd)"
+    echo "## Se creará el directorio ./build"
     mkdir build
 fi
 
-echo ">> cd build"
+echo ""
+
+echo "## cd build"
 cd build
 
-echo ">> cmake .."
+echo ""
+
+echo "## cmake .."
 cmake ..
 
-echo ">> cmake --build ."
+echo ""
+
+echo "## cmake --build ."
 cmake --build .
 
-echo ">> ./lab0_executble "
-./lab0_executble 
+echo ""
+
+echo "## ./lab0"
+./lab0

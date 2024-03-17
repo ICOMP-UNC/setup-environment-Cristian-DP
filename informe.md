@@ -9,6 +9,7 @@
 - [2. cmake](#2-cmake)
 	- [2.1. Construyendo un proyecto básico](#21-Construyendo-un-proyecto-básico)
 	- [2.2 Listo para construir y ejecutar](#22-Listo-para-construir-y-ejecutar)
+	- [2.3 Agregando una libreria](#23-Agregando-una-libreria)
 
 # 1. Git
 
@@ -120,4 +121,12 @@ $ cmake --build .
 $ ./lab0_executble 
 Bienvenido a main de lab0-SO2-2024
 
+```
+
+## 2.3 Agregando una libreria
+
+Para agregar una biblioteca en CMake, use el comando **include_directories()** y especifique el directorio donde se encuentra los archivos header
+
+```bash
+include_directories (include)
 ```

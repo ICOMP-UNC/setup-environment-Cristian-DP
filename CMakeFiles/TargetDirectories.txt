@@ -1,3 +1,0 @@
-/home/devuser/Facultad/SO2/setup-environment-Cristian-DP/CMakeFiles/lab0_execute.dir
-/home/devuser/Facultad/SO2/setup-environment-Cristian-DP/CMakeFiles/edit_cache.dir
-/home/devuser/Facultad/SO2/setup-environment-Cristian-DP/CMakeFiles/rebuild_cache.dir

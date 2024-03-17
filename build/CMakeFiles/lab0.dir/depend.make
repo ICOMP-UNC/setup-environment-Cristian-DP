@@ -1,2 +1,2 @@
-# Empty dependencies file for lab0_execute.
+# Empty dependencies file for lab0.
 # This may be replaced when dependencies are built.
