@@ -19,20 +19,16 @@ fi
 
 echo ""
 
+# Construimos el projecto
 echo "## cd build"
-cd build
+cd build && cmake .. && cmake --build .
 
 echo ""
 
-echo "## cmake .."
-cmake ..
-
-echo ""
-
-echo "## cmake --build ."
-cmake --build .
-
-echo ""
-
+# Ejecutamos el proyecto
 echo "## ./lab0"
 ./lab0
+
+# Eliminamos el directorio build
+rm -r ../build
+rm -r ../Makefile

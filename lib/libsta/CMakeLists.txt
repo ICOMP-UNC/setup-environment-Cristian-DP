@@ -5,9 +5,9 @@ cmake_minimum_required (VERSION 3.25)
 # https://cmake.org/cmake/help/latest/command/project.html#command:project
 
 project(
-		lab0
+		static_library
         VERSION 1.0.0
-        DESCRIPTION "CMake Configuration"
+        DESCRIPTION "CMake Configuration static_library"
         HOMEPAGE_URL "https://github.com/ICOMP-UNC/setup-environment-Cristian-DP"
         LANGUAGES C
         )
@@ -26,34 +26,8 @@ file (
 
 # https://cmake.org/cmake/help/latest/command/add_executable.html#command:add_executable
 
-add_executable (
+add_library (
 	${PROJECT_NAME}
+	STATIC
 	${SOURCES}
-)
-
-# Se añaden liberarias staticas y dinamicas
-
-add_subdirectory(lib/libdyn)
-add_subdirectory(lib/libsta)
-
-# Tenemos que especificar los headers de las librerias
-
-target_include_directories(
-	${PROJECT_NAME}
-	PUBLIC
-	lib/libsta/include
-)
-
-target_include_directories(
-	${PROJECT_NAME}
-	PUBLIC
-	lib/libdyn/include
-)
-
-# TENEMOS QUE LINKEAR LAS LIBRERIAS
-
-target_link_libraries (
-	${PROJECT_NAME}
-	static_library
-	dinamyc_library
 )
