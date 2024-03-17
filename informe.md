@@ -129,3 +129,24 @@ Para agregar una biblioteca en CMake, use el comando **include_directories()** y
 ```bash
 include_directories (include)
 ```
+
+## 2.3 Agregando libreria estatica y dinamica
+
+1. Crear directorio 
+	-	lib/lib[STATIC|DYNAMIC]/include
+	-	lib/lib[STATIC|DYNAMIC]/src
+	- 	lib/lib[STATIC|DYNAMIC]/CMakeLists.txt
+
+2. Dentro de src declarar las funciones que serán utilizadas
+3. Dentro de include declarar los headers a incluir
+4. dentro de lib/lib[STATIC|DYNAMIC]/CMakeLists.txt asegurarse que esten ocnfigurados
+	-	add_library (${PROJECT_NAME} [STATIC|SHARED] ${SOURCES})
+5. Dentro del CMakeLists.txt top agregar
+	- 	add_subdirectory(lib/libdyn)
+	-	add_subdirectory(lib/libsta)
+	-	target_include_directories( ${PROJECT_NAME} PUBLIC lib/libsta/include)
+	-	target_include_directories(	${PROJECT_NAME}	PUBLIC lib/libdyn/include)
+	-	target_link_libraries ( ${PROJECT_NAME}	static_library 	dinamyc_library)
+6. Agregar al main.c
+	- 	#include <dynamic.h>
+	-	#include <math.h>
