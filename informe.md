@@ -10,6 +10,7 @@
 	- [2.1. Construyendo un proyecto básico](#21-Construyendo-un-proyecto-básico)
 	- [2.2 Listo para construir y ejecutar](#22-Listo-para-construir-y-ejecutar)
 	- [2.3 Agregando una libreria](#23-Agregando-una-libreria)
+	- [2.4 Agregando libreria estatica y dinamica](#24-Agregando-libreria-estatica-y-dinamica)
 
 # 1. Git
 
@@ -130,7 +131,7 @@ Para agregar una biblioteca en CMake, use el comando **include_directories()** y
 include_directories (include)
 ```
 
-## 2.3 Agregando libreria estatica y dinamica
+## 2.4 Agregando libreria estatica y dinamica
 
 1. Crear directorio 
 	-	lib/lib[STATIC|DYNAMIC]/include
