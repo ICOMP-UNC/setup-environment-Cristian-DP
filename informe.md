@@ -120,7 +120,6 @@ $ cmake --build .
 # Run el ejecutable
 $ ./lab0_executble 
 Bienvenido a main de lab0-SO2-2024
-
 ```
 
 ## 2.3 Agregando una libreria
