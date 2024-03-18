@@ -1,0 +1,10 @@
+/build/
+/CMakeFiles/
+
+*.o
+*.out
+*.a
+*.so
+*.cmake
+*.d
+Makefile
