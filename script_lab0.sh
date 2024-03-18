@@ -21,7 +21,7 @@ echo ""
 
 # Construimos el projecto
 echo "## cd build"
-cd build && cmake .. && cmake --build .
+cd build && cmake -GNinja .. && ninja
 
 echo ""
 

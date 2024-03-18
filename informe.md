@@ -252,3 +252,20 @@ tests/unity/main.c                            28      28   100%
 TOTAL                                         38      37    97%
 ------------------------------------------------------------------------------
 ```
+
+# Anexo
+
+## A.1 Documentacion con Doxyfile
+
+- Para crear Documentacion
+
+```bash
+$ cd docs 
+$ doxygen
+```
+- Para crear Doxyfile
+
+```bash
+$ cd docs
+$ oxygen -g 
+```
