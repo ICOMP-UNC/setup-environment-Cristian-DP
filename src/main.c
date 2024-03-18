@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+*   Funcion principal
+*/
 int main(int argc, char *argv[])
 {
 

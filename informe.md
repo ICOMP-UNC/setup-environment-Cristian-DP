@@ -11,6 +11,9 @@
 	- [2.2 Listo para construir y ejecutar](#22-Listo-para-construir-y-ejecutar)
 	- [2.3 Agregando una libreria](#23-Agregando-una-libreria)
 	- [2.4 Agregando libreria estatica y dinamica](#24-Agregando-libreria-estatica-y-dinamica)
+- [3. Unity test](#3-Unity-test)
+	- [3.1 Run Test](#31-Run-Test)
+	- [3.2 Run Coverage](#32-Run-Coverage)
 
 # 1. Git
 
@@ -151,3 +154,101 @@ include_directories (include)
 6. Agregar al main.c
 	- 	#include <dynamic.h>
 	-	#include <math.h>
+
+
+# 3. Unity test
+
+## 3.1 Run Test
+
+- comandos
+
+```bash
+$ cd build && make -GNinja -DRUN_TEST=1 ..
+...
+[1/9] Creating directories for 'unity-populate'
+[1/9] Performing download step (git clone) for 'unity-populate'
+Clonando en 'Unity'...
+Tu rama está actualizada con 'origin/master'.
+Ya en 'master'
+[2/9] No update step for 'unity-populate'
+[3/9] No patch step for 'unity-populate'
+[5/9] No configure step for 'unity-populate'
+[6/9] No build step for 'unity-populate'
+[7/9] No install step for 'unity-populate'
+[8/9] No test step for 'unity-populate'
+[9/9] Completed 'unity-populate'
+...
+
+$ ninja
+
+[12/12] Linking C executable tests/test_lab0
+
+$ ctest --test-dir tests/ -VV
+
+...
+1: Test command: /home/devuser/Facultad/SO2/setup-environment-Cristian-DP/build/tests/test_lab0
+1: Working Directory: /home/devuser/Facultad/SO2/setup-environment-Cristian-DP/build/tests
+1: Test timeout computed to be: 10000000
+1: /home/devuser/Facultad/SO2/setup-environment-Cristian-DP/tests/unity/main.c:45:test_mypow_base_and_exp_pos:PASS
+1: /home/devuser/Facultad/SO2/setup-environment-Cristian-DP/tests/unity/main.c:46:test_mypow_base_neg_and_exp_pos:PASS
+1: /home/devuser/Facultad/SO2/setup-environment-Cristian-DP/tests/unity/main.c:47:test_mypow_base_neg_and_exp_neg:PASS
+1: /home/devuser/Facultad/SO2/setup-environment-Cristian-DP/tests/unity/main.c:48:test_mypow_base_pos_and_exp_neg:PASS
+1: 
+1: -----------------------
+1: 4 Tests 0 Failures 0 Ignored 
+1: OK
+1/1 Test #1: test_lab0 ........................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.00 sec
+
+```
+
+
+## 3.2 Run Coverage
+
+```bash
+$ cmake -GNinja -DRUN_COVERAGE=1 ..
+
+[1/9] Creating directories for 'unity-populate'
+[1/9] Performing download step (git clone) for 'unity-populate'
+Clonando en 'Unity'...
+Ya en 'master'
+Tu rama está actualizada con 'origin/master'.
+[2/9] No update step for 'unity-populate'
+[3/9] No patch step for 'unity-populate'
+[5/9] No configure step for 'unity-populate'
+[6/9] No build step for 'unity-populate'
+[7/9] No install step for 'unity-populate'
+[8/9] No test step for 'unity-populate'
+[9/9] Completed 'unity-populate'
+
+$ ninja
+
+[12/12] Linking C executable tests/test_lab0
+
+$ ctest --test-dir tests/
+
+Internal ctest changing into directory: /home/devuser/Facultad/SO2/setup-environment-Cristian-DP/build/tests
+Test project /home/devuser/Facultad/SO2/setup-environment-Cristian-DP/build/tests
+    Start 1: test_lab0
+1/1 Test #1: test_lab0 ........................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.00 sec
+
+$ gcovr -r /home/devuser/Facultad/SO2/setup-environment-Cristian-DP .
+------------------------------------------------------------------------------
+                           GCC Code Coverage Report
+Directory: ..
+------------------------------------------------------------------------------
+File                                       Lines    Exec  Cover   Missing
+------------------------------------------------------------------------------
+src/MathFunctions.c                           10       9    90%   17
+tests/unity/main.c                            28      28   100%
+------------------------------------------------------------------------------
+TOTAL                                         38      37    97%
+------------------------------------------------------------------------------
+```

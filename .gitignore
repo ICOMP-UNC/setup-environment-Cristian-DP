@@ -1,10 +1,30 @@
 /build/
 /CMakeFiles/
+/docs/docs/
 
+# Compiled object files
 *.o
+
+# Executables
+*.exe
 *.out
+
+# Compiled libraries
 *.a
 *.so
+
+# Disable for now
 *.cmake
-*.d
-Makefile
+
+# External directoy
+/external/
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+
+# Dont track sonnar files
+.scannerwork/
+
+# ninja file
+*.ninja_*

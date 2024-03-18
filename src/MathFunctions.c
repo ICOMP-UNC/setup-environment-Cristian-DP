@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+*   Funcion que calcula y obtiene la potencia de un numero
+*   @param
+*   - base: double
+*   - exp:  int
+*
+*   @return
+*   - result: int
+*/
 double mypow(double base, int exp)
 {
     if (exp == 0)
