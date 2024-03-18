@@ -11,7 +11,9 @@
 	- [2.2 Listo para construir y ejecutar](#22-Listo-para-construir-y-ejecutar)
 	- [2.3 Agregando una libreria](#23-Agregando-una-libreria)
 	- [2.4 Agregando libreria estatica y dinamica](#24-Agregando-libreria-estatica-y-dinamica)
-- [3. Unity test](#2-Unity-test)
+- [3. Unity test](#3-Unity-test)
+	- [3.1 Run Test](#31-Run-Test)
+	- [3.2 Run Coverage](#32-Run-Coverage)
 
 # 1. Git
 
@@ -204,7 +206,7 @@ Total Test time (real) =   0.00 sec
 ```
 
 
-## 3.2 Run 
+## 3.2 Run Coverage
 
 ```bash
 $ cmake -GNinja -DRUN_COVERAGE=1 ..
