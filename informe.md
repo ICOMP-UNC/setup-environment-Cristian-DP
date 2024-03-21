@@ -14,6 +14,8 @@
 - [3. Unity test](#3-Unity-test)
 	- [3.1 Run Test](#31-Run-Test)
 	- [3.2 Run Coverage](#32-Run-Coverage)
+- [4. SQA](#4-SQA)
+	- [4.1.Pipeline Cmake](#31-Pipeline-Cmake)
 
 # 1. Git
 
@@ -253,42 +255,10 @@ TOTAL                                         38      37    97%
 ------------------------------------------------------------------------------
 ```
 
-# Anexo
-
-## A.1 Documentacion con Doxyfile
-
-- Para crear Documentacion
-
-```bash
-$ cd docs 
-$ doxygen
-```
-- Para crear Doxyfile
-
-```bash
-$ cd docs
-$ oxygen -g 
-```
 
 # 4. SQA
 
-## 4.1. Complejidad ciclomática
-
-V(G) = e - n + 2p
-
-- G: grafo
-- e: número de vertices de G
-- n: número de nodos de G
-- p: Número de regiones conectadas en G
-
-## 4.2. Criterios
-
-- 1-10: poco riesgo
-- 11-20: riesgo moderado
-- 21-50: riesgo alto
-- >50: MUY alyo riesgo
-
-## 4.3. Pipeline Cmake
+## 4.1. Pipeline Cmake
 
 - Clonamos CDash
 ```bash
@@ -307,7 +277,7 @@ docker-compose  -f CDash/docker/docker-compose.yml \
 
 Ingresar a la web http://localhost:8080
 
-![Cdash Login](./images/cdash.png)
+![Cdash Login](./SQA/images/cdash.png)
 
 - Se crea usuarios admin
 
@@ -321,7 +291,7 @@ MyCDash -> Create new project -> Name:UNC-SOII-LAB0
 
 Luego next a todo
 
-![project created](./images/project.png)
+![project created](./SQA/images/project.png)
 
 - Se ejecutará ctest
 
@@ -329,4 +299,21 @@ Luego next a todo
 $ ctest -S Pipeline.cmake -VV
 ```
 
-![info Uploaded](./images/push-file.png)
+![info Uploaded](./SQA/images/push-file.png)
+
+# Anexo
+
+## A.1 Documentacion con Doxyfile
+
+- Para crear Documentacion
+
+```bash
+$ cd docs 
+$ doxygen
+```
+- Para crear Doxyfile
+
+```bash
+$ cd docs
+$ oxygen -g 
+```
