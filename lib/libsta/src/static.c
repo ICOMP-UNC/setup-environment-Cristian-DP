@@ -2,6 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+*   Implementación de Funcion 
+*   que calcula y obtiene la potencia de un numero usando libreria estatica
+* 
+*   @param
+*   - base: double - Representa el numero base que se le aplicará el exponente
+*   - exp:  int - Representa el numero exponente que se aplicará a base
+*
+*   @return
+*   - result: double
+*/
 double mypow_static(double base, int exp)
 {
     if (exp == 0)

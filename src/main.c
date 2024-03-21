@@ -7,7 +7,14 @@
 #include <stdlib.h>
 
 /**
-*   Funcion principal
+*   Funcion main.
+* 
+*   @param
+*   - argc:     int     - Cantidad de argumentos pasado a la funcion main
+*   - *argv[]:  char    - Puntero a la lista de argumentos
+*
+*   @return
+*   - result: int
 */
 int main(int argc, char *argv[])
 {
