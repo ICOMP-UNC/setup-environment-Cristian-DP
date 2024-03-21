@@ -25,6 +25,3 @@
 
 # Dont track sonnar files
 .scannerwork/
-
-# ninja file
-*.ninja_*
