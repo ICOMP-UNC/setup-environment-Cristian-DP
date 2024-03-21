@@ -1,0 +1,27 @@
+/build/
+/CMakeFiles/
+/docs/docs/
+
+# Compiled object files
+*.o
+
+# Executables
+*.exe
+*.out
+
+# Compiled libraries
+*.a
+*.so
+
+# Disable for now
+*.cmake
+
+# External directoy
+/external/
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+
+# Dont track sonnar files
+.scannerwork/
