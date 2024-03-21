@@ -15,7 +15,7 @@
 *.so
 
 # Disable for now
-*.cmake
+#*.cmake
 
 # External directoy
 /external/
