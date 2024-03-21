@@ -1,6 +1,7 @@
 /build/
 /CMakeFiles/
 /docs/docs/
+/SQA/CDash/
 
 # Compiled object files
 *.o

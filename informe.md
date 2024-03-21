@@ -269,3 +269,64 @@ $ doxygen
 $ cd docs
 $ oxygen -g 
 ```
+
+# 4. SQA
+
+## 4.1. Complejidad ciclomática
+
+V(G) = e - n + 2p
+
+- G: grafo
+- e: número de vertices de G
+- n: número de nodos de G
+- p: Número de regiones conectadas en G
+
+## 4.2. Criterios
+
+- 1-10: poco riesgo
+- 11-20: riesgo moderado
+- 21-50: riesgo alto
+- >50: MUY alyo riesgo
+
+## 4.3. Pipeline Cmake
+
+- Clonamos CDash
+```bash
+git clone https://github.com/Kitware/CDash
+```
+- Se crearán los contenedores docker
+
+```bash
+cd CDash
+docker-compose  -f CDash/docker/docker-compose.yml \
+                -f CDash/docker/docker-compose.dev.yml  \
+                -f CDash/docker/docker-compose.mysql.yml \
+                --env-file CDash/.env.dev \
+                up -d 
+```
+
+Ingresar a la web http://localhost:8080
+
+![Cdash Login](./images/cdash.png)
+
+- Se crea usuarios admin
+
+```bash
+    docker exec --user www-data cdash bash -c "php artisan user:save --email=cristian.pereyra@lab0.so2 --password=12345678 --firstname=cristian --lastname=pereyra --institution=lab0-SO2 --admin=1"
+```
+
+- Se Debe crear un projecto dentro de CDash web 
+
+MyCDash -> Create new project -> Name:UNC-SOII-LAB0 
+
+Luego next a todo
+
+![project created](./images/project.png)
+
+- Se ejecutará ctest
+
+```bash
+$ ctest -S Pipeline.cmake -VV
+```
+
+![info Uploaded](./images/push-file.png)
