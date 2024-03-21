@@ -23,23 +23,23 @@ int main(int argc, char *argv[])
 
     printf("step 2 - Se incorpora libreria propia de pow\n");
 
-    double inputValue_base = 0;
-    int inputValue_exp = 0;
+    double input_Value_base = 0;
+    int input_Value_exp = 0;
 
     printf("[main] ingrese base: ");
-    scanf("%lf", &inputValue_base);
+    scanf("%lf", &input_Value_base);
 
     printf("[main] ingrese exponente: ");
-    scanf("%d", &inputValue_exp);
+    scanf("%d", &input_Value_exp);
 
-    printf("[main] El resultado de elevar %g a la %d se muestran a continuación\n", inputValue_base, inputValue_exp);
+    printf("[main] El resultado de elevar %g a la %d se muestran a continuación\n", input_Value_base, input_Value_exp);
 
-    mypow(inputValue_base, inputValue_exp);
+    mypow(input_Value_base, input_Value_exp);
 
     printf("step 3 - Se incorpora librerias STATIC DYNAMIC de pow\n");
 
-    mypow_static(inputValue_base, inputValue_exp);
-    mypow_dynamic(inputValue_base, inputValue_exp);
+    mypow_static(input_Value_base, input_Value_exp);
+    mypow_dynamic(input_Value_base, input_Value_exp);
 
     return 0;
 }
